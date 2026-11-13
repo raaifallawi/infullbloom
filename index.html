@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>in full bloom</title>
+<meta name="theme-color" content="#d98bb5">
+<meta name="description" content="A playlist made for you.">
+<meta property="og:title" content="in full bloom">
+<meta property="og:description" content="A playlist made for you.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%B8%3C/text%3E%3C/svg%3E">
+
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,400;1,9..144,500&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff4ec;--ink:#3a1830;--soft:#7a5368;--card:#ffe7da;--btn:#3a1830;--btn-ink:#fff4ec;--accent:#d98bb5;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#241020;--ink:#fcebe3;--soft:#d8b8c9;--card:#34182d;--btn:#f6d55c;--btn-ink:#3a1830;--accent:#e9a3c8}}
+:root[data-theme="dark"]{--bg:#241020;--ink:#fcebe3;--soft:#d8b8c9;--card:#34182d;--btn:#f6d55c;--btn-ink:#3a1830;--accent:#e9a3c8}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Nunito Sans",system-ui,sans-serif;font-size:17px;line-height:1.65;text-align:center}
+main{max-width:520px;margin:0 auto;padding:40px 24px 64px}
+h1{font-family:Fraunces,Georgia,serif;font-style:italic;font-weight:500;font-size:clamp(46px,14vw,72px);line-height:1;margin:8px 0 12px;letter-spacing:-.01em}
+.lead{color:var(--soft);margin:0 auto 32px;max-width:32ch}
+.flower{display:block;margin:0 auto;width:min(78vw,300px);height:auto;background:none;border:0;padding:0;cursor:pointer}
+.flower svg{width:100%;height:auto;display:block}
+.bloom{transform-origin:50% 50%;animation:open 1.8s cubic-bezier(.2,.8,.2,1) both}
+@keyframes open{from{transform:scale(.25) rotate(-40deg);opacity:0}}
+@media (prefers-reduced-motion:reduce){.bloom{animation:none}}
+.flower:focus-visible,.go:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+.likes{display:grid;gap:14px;margin:40px 0 36px;text-align:left}
+.likes div{display:flex;gap:16px;align-items:center;background:var(--card);border-radius:20px;padding:16px 20px}
+.likes svg{flex:none;width:44px;height:44px;stroke:var(--ink);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.likes p{margin:0}
+.go{display:inline-block;background:var(--btn);color:var(--btn-ink);text-decoration:none;font-weight:600;padding:16px 30px;border-radius:999px}
+.note{color:var(--soft);font-size:15px;margin-top:18px}
+</style>
+</head>
+<body>
+<main>
+<button class="flower" id="f" aria-label="Make the flower bloom again">
+<svg viewBox="0 0 200 200" role="img" aria-hidden="true"><defs><ellipse id="p" cx="100" cy="44" rx="7" ry="36"/></defs><g class="bloom" id="b"><g id="o" fill="#d98bb5"></g><g id="m" fill="#c9b6e4" transform="translate(100 100) scale(.72) translate(-100 -100)"></g><g id="i" fill="#f6d55c" transform="translate(100 100) scale(.42) translate(-100 -100)"></g><circle cx="100" cy="100" r="9" fill="#e9a93a"/></g></svg>
+</button>
+<h1>in full bloom</h1>
+<p class="lead">A playlist made for you, in the order it’s meant to be heard.</p>
+<section class="likes" aria-label="Made for someone who loves">
+<div><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="4"/><circle cx="24" cy="11" r="6"/><circle cx="24" cy="37" r="6"/><circle cx="11" cy="24" r="6"/><circle cx="37" cy="24" r="6"/></svg><p>Flowers, because you make any room feel like spring.</p></div>
+<div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 20V6l9 7h10l9-7v14c0 12-6 20-14 20S10 32 10 20Z"/><circle cx="18" cy="23" r="1.5"/><circle cx="30" cy="23" r="1.5"/><path d="M22 29h4M24 29v2"/></svg><p>Cats, soft and curious, and never anywhere they don’t want to be.</p></div>
+<div><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 42C5 22 12 6 24 6s19 16 14 36h-8c2-14-1-22-6-22s-8 8-6 22Z"/></svg><p>Horses, for the quiet strength and the open fields.</p></div>
+</section>
+<a class="go" href="https://open.spotify.com/playlist/5etLhMzxRNQISTVA1IH57p">Open the playlist on Spotify</a>
+<p class="note">Best with headphones. Start at the first song.</p>
+</main>
+<script>
+(function(){
+function fill(id,n){var g=document.getElementById(id),s='';for(var k=0;k<n;k++){s+='<use href="#p" transform="rotate('+(k*360/n)+' 100 100)"/>';}g.innerHTML=s;}
+fill('o',20);fill('m',16);fill('i',12);
+var b=document.getElementById('b');
+document.getElementById('f').addEventListener('click',function(){b.style.animation='none';void b.getBoundingClientRect();b.style.animation='';});
+})();
+</script>
+</body>
+</html>
